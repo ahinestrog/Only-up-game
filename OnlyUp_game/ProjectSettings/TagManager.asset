@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Lavafloor
+  - audio_gameover
   layers:
   - Default
   - TransparentFX

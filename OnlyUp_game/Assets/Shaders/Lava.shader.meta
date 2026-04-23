@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: b99da82a9a7f21306b1524141a8130ba
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _LavaTex: {fileID: 2800000, guid: bcc31e3ae5833df4e93594813aee8010, type: 3}
+  - _RockTex: {fileID: 2800000, guid: 5df47364d9c9f05eea1a50dcda364c6b, type: 3}
+  - _NoiseTex: {fileID: 2800000, guid: 574ad3d1aea8f027b83128dc7e450ccb, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

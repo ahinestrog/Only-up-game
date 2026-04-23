@@ -19,6 +19,13 @@ namespace StarterAssets
         public AudioClip LandingAudioClip;
         public AudioClip[] FootstepAudioClips;
         public float FootstepAudioVolume = 0.5f;
+        public AudioClip LoseAudioClip;
+        public float LoseAudioVolume = 1.0f;
+        public AudioSource LoseSfxSource;
+        public GameObject LoseVfxPrefab;
+        public Transform LoseVfxSpawnPoint;
+        public float LoseVfxHeightOffset = 1.0f;
+        public float LoseVfxLifetime = 2.0f;
 
         public float JumpHeight = 1.2f;
 
@@ -68,6 +75,7 @@ namespace StarterAssets
         private PlayerInput _playerInput;
         private Animator _animator;
         private CharacterController _controller;
+        private Renderer[] _characterRenderers;
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
 
@@ -103,6 +111,7 @@ namespace StarterAssets
             
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
+            _characterRenderers = GetComponentsInChildren<Renderer>(true);
             _input = GetComponent<StarterAssetsInputs>();
             _playerInput = GetComponent<PlayerInput>();
 
@@ -298,12 +307,51 @@ namespace StarterAssets
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            if (!_isRespawning && hit.gameObject.CompareTag(lavaTag)) StartCoroutine(Respawn());
+            if (hit.gameObject.CompareTag(lavaTag)) HandleLose();
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!_isRespawning && other.CompareTag(lavaTag)) StartCoroutine(Respawn());
+            if (other.CompareTag(lavaTag)) HandleLose();
+        }
+
+        private void HandleLose()
+        {
+            if (_isRespawning) return;
+
+            SpawnLoseVfx();
+            SetCharacterVisible(false);
+
+            if (LoseAudioClip != null && LoseSfxSource != null)
+            {
+                LoseSfxSource.PlayOneShot(LoseAudioClip, LoseAudioVolume);
+            }
+
+            StartCoroutine(Respawn());
+        }
+
+        private void SpawnLoseVfx()
+        {
+            if (LoseVfxPrefab == null) return;
+
+            Vector3 spawnPos = LoseVfxSpawnPoint != null ? LoseVfxSpawnPoint.position : transform.position;
+            spawnPos.y += LoseVfxHeightOffset;
+            Quaternion spawnRot = LoseVfxSpawnPoint != null ? LoseVfxSpawnPoint.rotation : Quaternion.identity;
+
+            GameObject vfxInstance = Instantiate(LoseVfxPrefab, spawnPos, spawnRot);
+            vfxInstance.SetActive(true);
+
+            var particleSystems = vfxInstance.GetComponentsInChildren<ParticleSystem>(true);
+            for (int i = 0; i < particleSystems.Length; i++)
+            {
+                particleSystems[i].Clear(true);
+                particleSystems[i].Play(true);
+            }
+
+            if (LoseVfxLifetime > 0.0f)
+            {
+                Destroy(vfxInstance, LoseVfxLifetime);
+            }
         }
 
         private IEnumerator Respawn()
@@ -319,8 +367,22 @@ namespace StarterAssets
             transform.SetPositionAndRotation(pos, rot);
             _verticalVelocity = 0.0f;
             _controller.enabled = true;
+            SetCharacterVisible(true);
             _overlayLoseMessage = string.Empty;
             _isRespawning = false;
+        }
+
+        private void SetCharacterVisible(bool visible)
+        {
+            if (_characterRenderers == null) return;
+
+            for (int i = 0; i < _characterRenderers.Length; i++)
+            {
+                if (_characterRenderers[i] != null)
+                {
+                    _characterRenderers[i].enabled = visible;
+                }
+            }
         }
 
         private void OnGUI()
