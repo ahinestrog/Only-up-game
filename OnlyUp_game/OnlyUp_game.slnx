@@ -1,5 +1,5 @@
 ﻿<Solution>
   <Project Path="Unity.PackageValidationSuite.Editor.csproj" />
-  <Project Path="Unity.PackageValidationSuite.Editor.Extension.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Unity.PackageValidationSuite.Editor.Extension.csproj" />
 </Solution>

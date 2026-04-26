@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace StarterAssets
 {
@@ -86,10 +88,15 @@ namespace StarterAssets
         public string lavaTag = "Lavafloor";
         public float respawnDelay = 1.25f;
         public Transform mainPlatformRespawnPoint;
+        public int startingLives = 3;
+        public string gameOverSceneName = "gameOver_menu";
+        public TMP_Text livesText;
 
         private Vector3 _spawnFallbackPosition;
         private Quaternion _spawnFallbackRotation;
         private bool _isRespawning;
+        private bool _isGameOver;
+        private int _currentLives;
         private string _overlayLoseMessage;
         private float _overlayHideTime;
 
@@ -108,6 +115,9 @@ namespace StarterAssets
             _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
             _spawnFallbackPosition = transform.position;
             _spawnFallbackRotation = transform.rotation;
+            _currentLives = Mathf.Max(1, startingLives);
+            SetupLivesUI();
+            UpdateLivesUI();
             
             _hasAnimator = TryGetComponent(out _animator);
             _controller = GetComponent<CharacterController>();
@@ -127,7 +137,7 @@ namespace StarterAssets
 
         private void Update()
         {
-            if (_isRespawning) return;
+            if (_isRespawning || _isGameOver) return;
 
             JumpAndGravity();
             GroundedCheck();
@@ -317,7 +327,10 @@ namespace StarterAssets
 
         private void HandleLose()
         {
-            if (_isRespawning) return;
+            if (_isRespawning || _isGameOver) return;
+
+            _currentLives--;
+            UpdateLivesUI();
 
             SpawnLoseVfx();
             SetCharacterVisible(false);
@@ -327,7 +340,56 @@ namespace StarterAssets
                 LoseSfxSource.PlayOneShot(LoseAudioClip, LoseAudioVolume);
             }
 
+            if (_currentLives <= 0)
+            {
+                StartCoroutine(GameOverRoutine());
+                return;
+            }
+
             StartCoroutine(Respawn());
+        }
+
+        private void UpdateLivesUI()
+        {
+            if (livesText != null)
+            {
+                livesText.text = "Vidas: " + _currentLives;
+            }
+        }
+
+        private void SetupLivesUI()
+        {
+            if (livesText == null) return;
+
+            RectTransform rectTransform = livesText.rectTransform;
+            rectTransform.anchorMin = new Vector2(1f, 1f);
+            rectTransform.anchorMax = new Vector2(1f, 1f);
+            rectTransform.pivot = new Vector2(1f, 1f);
+            rectTransform.anchoredPosition = new Vector2(-20f, -20f);
+
+            livesText.alignment = TextAlignmentOptions.TopRight;
+        }
+
+        private IEnumerator GameOverRoutine()
+        {
+            _isGameOver = true;
+            _overlayLoseMessage = string.Empty;
+            _overlayHideTime = 0f;
+            _controller.enabled = false;
+            yield return new WaitForSeconds(respawnDelay);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 1f;
+
+            if (!string.IsNullOrWhiteSpace(gameOverSceneName) && Application.CanStreamedLevelBeLoaded(gameOverSceneName))
+            {
+                SceneManager.LoadScene(gameOverSceneName);
+            }
+            else
+            {
+                Debug.LogError("No se pudo cargar la escena de Game Over. Revisa que el nombre sea exacto y que esté en File > Build Settings > Scenes In Build: " + gameOverSceneName);
+            }
         }
 
         private void SpawnLoseVfx()
@@ -387,16 +449,17 @@ namespace StarterAssets
 
         private void OnGUI()
         {
-            if (string.IsNullOrEmpty(_overlayLoseMessage) || Time.time > _overlayHideTime) return;
+            if (!string.IsNullOrEmpty(_overlayLoseMessage) && Time.time <= _overlayHideTime)
+            {
+                GUIStyle style = new GUIStyle(GUI.skin.label);
+                style.alignment = TextAnchor.MiddleCenter;
+                style.fontSize = 44;
+                style.fontStyle = FontStyle.Bold;
+                style.normal.textColor = Color.white;
 
-            GUIStyle style = new GUIStyle(GUI.skin.label);
-            style.alignment = TextAnchor.MiddleCenter;
-            style.fontSize = 44;
-            style.fontStyle = FontStyle.Bold;
-            style.normal.textColor = Color.white;
-
-            Rect textRect = new Rect(0, Screen.height * 0.30f, Screen.width, 80f);
-            GUI.Label(textRect, _overlayLoseMessage, style);
+                Rect textRect = new Rect(0, Screen.height * 0.30f, Screen.width, 80f);
+                GUI.Label(textRect, _overlayLoseMessage, style);
+            }
         }
     }
 }
