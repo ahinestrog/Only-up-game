@@ -3,7 +3,32 @@ guid: d6d220cbe90859b8babba452c81aba3a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 8f9f9702cf95fe1f6ac0e89888aadf01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GT1_Glass_Clean
+    second: {fileID: 2100000, guid: 0692888ebfa9ed323924937b987e3e81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #37
+    second: {fileID: 2100000, guid: ff96e685a1c48199d85a98950360782c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gt1_Bottom
+    second: {fileID: 2100000, guid: 76bde1f0d7336bdb083201b91a0042a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gt1_headlights_2
+    second: {fileID: 2100000, guid: 17c41f6f4cc2e18a4b1183bc8f7bba16, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

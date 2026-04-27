@@ -3,7 +3,37 @@ guid: 19164ed4787cf61b2b3b320da1316ba1
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: block
+    second: {fileID: 2100000, guid: 600d7a1885e4b51709bb4f19a6cd9d50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 037af9efaaedf628395ac587f91bb423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fan
+    second: {fileID: 2100000, guid: f939bbb6ca7780985b5547008634d9d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gird wire_
+    second: {fileID: 2100000, guid: fc459fa288ef6014fa0f04cffb47c866, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stand_
+    second: {fileID: 2100000, guid: bcb7f372ae4db6c0a9d20239b6a42f1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire
+    second: {fileID: 2100000, guid: e7c3efb16a462c6459da5f5be85c6dde, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,162 @@ guid: 8a67ad08a632a820eb9c3478eeb93add
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "BLACK_\xC4INT"
+    second: {fileID: 2100000, guid: 98e2b12f8bdca68e39d3e7f3d5eda5e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021BadgeB_Material
+    second: {fileID: 2100000, guid: 5433ec91a5dbdfe3f851fb0eccff169b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021Base_Material
+    second: {fileID: 2100000, guid: 92a18ce042d8cad2e862cba265e8fce8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021Base_Material1
+    second: {fileID: 2100000, guid: 87501dfa9d871e7e5b574d0c913a2a2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021Carbon1M_Material
+    second: {fileID: 2100000, guid: f9f5a0139eadb0e37ab51df00601e921, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021Carbon1M_Material1
+    second: {fileID: 2100000, guid: d980238463f860662a8f58f7f4b090e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021Coloured_Material
+    second: {fileID: 2100000, guid: 24a45011007148fd686bac7dd9ec76a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021EngineA_Material
+    second: {fileID: 2100000, guid: 478e939a37cb2cfe88d44ff3350fa4c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleAlpha1B_Material
+    second: {fileID: 2100000, guid: 88ae1eb61205eca2b87f622187c91ce6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleAlpha2B_Material
+    second: {fileID: 2100000, guid: 43a9a7ea588e5be97be546b8e8aa7a3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleAlpha3B_Material
+    second: {fileID: 2100000, guid: bf4fd6b905470d35989ec98dd2455ac2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleAlpha4B_Material
+    second: {fileID: 2100000, guid: c3f8eda6cdccdf752ac52d9f37ba937c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleAlpha5B_Material
+    second: {fileID: 2100000, guid: ba57eed2b16f6d0f2bd2e0a6f8793a5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleAlpha7A_Material
+    second: {fileID: 2100000, guid: 126f17f24a7eed4d3a566e1fd1ce790b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleAlpha8A_Material
+    second: {fileID: 2100000, guid: 2e605cd8225980de1bbfa74ec2268808, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleNoAlpha6B_Material
+    second: {fileID: 2100000, guid: e408aac6e553b6131aedb161ee4dd100, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021GrilleNoAlpha9A_Material
+    second: {fileID: 2100000, guid: 540fb306600c15c17a9970cc4b5c57d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021InteriorA_Material
+    second: {fileID: 2100000, guid: 129ef55eaa354182b9a36f72c4f23af1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021InteriorTillingA_Material
+    second: {fileID: 2100000, guid: 7100da4604df92cc189935e92d1963ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021LightA_Material
+    second: {fileID: 2100000, guid: 2374a71c5eeeb20aab9c21f330065351, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021ManufacturerPlateB_Material
+    second: {fileID: 2100000, guid: d87e5a42fd9d8ee6da3c1149b09634a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021PaintTNR_Material
+    second: {fileID: 2100000, guid: 1cb42b3f7abd22267a52ae367c43a646, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021Window_Material
+    second: {fileID: 2100000, guid: b0e609ed09bfbe5b8825f5e0ccd49b3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021Wing1a_Badge_Material1
+    second: {fileID: 2100000, guid: e516dc5bbdb7419f081c12913af12077, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021Wing1a_Textured_Material1
+    second: {fileID: 2100000, guid: ffc6113deed947ea1a15ae82df0f8cb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamborghini_AventadorTNR1_2021_CallipersCalliperGloss_Material
+    second: {fileID: 2100000, guid: 0a25e656a000aac0ea24b780b6fd31a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ORANGE_GLASS
+    second: {fileID: 2100000, guid: 55c028d34bada351a8ea8032ef7a6e12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RED_GLASS
+    second: {fileID: 2100000, guid: 243a9241f75efd7de87be94a72ac3b15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _TNRRims_117A20WaBrakeDisc_ForgedDrilled_Material
+    second: {fileID: 2100000, guid: 8765383fd3ec42e7c8a14abb4d13acd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _TNRRims_117A20WaTNR_Rim117A_Material
+    second: {fileID: 2100000, guid: 974ef95c41033f20cace24c9e6021c68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _TNRRims_117A20WaTireBlur_Material
+    second: {fileID: 2100000, guid: f03cc956db7476675a346aab85fd9ffc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

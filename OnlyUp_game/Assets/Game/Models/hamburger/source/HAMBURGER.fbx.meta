@@ -3,7 +3,22 @@ guid: c7d7b48ff22e64004aeb5a27a0e49dba
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BREAD
+    second: {fileID: 2100000, guid: 4f2d86915db7df7bfa5b73b2d3dd8646, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: INGREDIENTS
+    second: {fileID: 2100000, guid: 7ed0e31a62dc83d269a24c61a91c078c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MEAT
+    second: {fileID: 2100000, guid: 568364467b43be06e870672af623cb94, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

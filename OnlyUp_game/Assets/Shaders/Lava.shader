@@ -6,7 +6,7 @@ Shader "Custom/Lava"
         _RockTex ("Rock Texture", 2D) = "gray" {}
         _NoiseTex ("Noise Texture", 2D) = "gray" {}
 
-        _Speed1 ("Speed 1", Float) = 0.5
+        _Speed1 ("Speed 1", Float) = 0.35
         _Speed2 ("Speed 2", Float) = -0.3
 
         _Distortion ("Distortion Strength", Float) = 0.1
